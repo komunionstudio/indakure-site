@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IndaKure — A different kind of flower shop · Somerset, NJ</title>
+<meta name="description" content="IndaKure is an adult-use cannabis dispensary and garden at 1483 Lincoln Highway, Somerset, NJ, built by twin sisters Amina and Mariam Kure. Opening February 2027.">
+<meta property="og:title" content="IndaKure — A different kind of flower shop · Somerset, NJ">
+<meta property="og:description" content="IndaKure is an adult-use cannabis dispensary and garden at 1483 Lincoln Highway, Somerset, NJ, built by twin sisters Amina and Mariam Kure. Opening February 2027.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://indakure.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2E4234">
+<link rel="canonical" href="https://indakure.com/">
+<link rel="icon" type="image/png" href="favicon.png">
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./signup.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><script src="./motion.js"></script><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><script src="./image-slot.js"></script><style>#notify input::placeholder{color:#F8F2E7;opacity:.75}@keyframes heroDrift{0%{transform:translate(0,0) scale(1) rotate(0deg)}50%{transform:translate(-1.2%,.8%) scale(1.03) rotate(.4deg)}100%{transform:translate(1%,-.6%) scale(1.015) rotate(-.3deg)}}@media (prefers-reduced-motion:reduce){*{animation:none!important}}@font-face{font-family:'Tropiline';src:url('./fonts/Tropiline-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'Tropiline';src:url('./fonts/Tropiline-SemiBold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:'Tropiline';src:url('./fonts/Tropiline-Italic.otf') format('opentype');font-weight:400;font-style:italic;font-display:swap}@font-face{font-family:'Tropiline Sans';src:url('./fonts/TropilineSans-Light.otf') format('opentype');font-weight:300;font-display:swap}@font-face{font-family:'Tropiline Sans';src:url('./fonts/TropilineSans-Regular.otf') format('opentype');font-weight:400;font-display:swap}@font-face{font-family:'Tropiline Sans';src:url('./fonts/TropilineSans-SemiBold.otf') format('opentype');font-weight:500 600;font-display:swap}html{scroll-behavior:smooth}body{margin:0;background:#F8F2E7;color:#2E4234;font-family:'Tropiline Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#2E4234;text-decoration:none}a:hover{color:#2E4234}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@keyframes fadein{from{opacity:0}to{opacity:1}}@keyframes gatepop{from{opacity:0;transform:translateY(24px) scale(.94)}to{opacity:1;transform:none}}input::placeholder{color:#5A3A2A}</style></helmet>
+
+<!-- AGE GATE -->
+<sc-if value="{{ gateOpen }}" hint-placeholder-val="{{ true }}">
+<div style="position:fixed;inset:0;z-index:50;background:linear-gradient(rgba(30,44,35,.45),rgba(30,44,35,.45)),#2E4234 url('./assets/hero-cover.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:safe center;overflow-y:auto;padding:24px;box-sizing:border-box;animation:fadein .5s ease both">
+<div style="position:relative;width:min(520px,100%);aspect-ratio:1/1;min-height:fit-content;box-sizing:border-box;margin:auto;background:#F8F2E7;color:#2E4234;padding:clamp(32px,5vw,52px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 40px 100px rgba(10,20,14,.45);animation:gatepop .7s cubic-bezier(.2,.9,.25,1.1) .15s both">
+<div style="position:absolute;inset:10px;border:1px solid #D9D2C3;pointer-events:none"></div>
+<img src="./brand/logo-dispensary-forest.png" alt="IndaKure Dispensary" style="position:relative;width:min(240px,58vw);height:auto;display:block">
+<div style="position:relative;font-size:clamp(32px,4vw,42px);line-height:1.05;font-family:'Tropiline',Georgia,serif;font-weight:600;letter-spacing:0;margin-top:32px">Are you 21 or older?</div>
+<p style="position:relative;margin:10px 0 26px;font-size:16px;line-height:1.5;color:#5A574E;text-wrap:balance">You must be of legal age to enter this site.</p>
+<div style="position:relative;display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:380px">
+<button onClick="{{ enter }}" style="font-family:'DM Mono',monospace;font-weight:400;height:50px;border:0;background:#2E4234;color:#F8F2E7;font-size:13px;letter-spacing:2.5px;cursor:pointer;text-transform:uppercase;white-space:nowrap" style-hover="background:#1E2C23">Yes, I'm 21+</button>
+<a href="https://www.nj.gov/cannabis/" style="font-family:'DM Mono',monospace;font-weight:400;height:50px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;border:1px solid #2E4234;font-size:13px;letter-spacing:2.5px;color:#2E4234;text-transform:uppercase;white-space:nowrap">No, exit</a>
+</div>
+<label style="position:relative;display:flex;gap:8px;align-items:center;margin-top:18px;font-size:14px;color:#5A574E;cursor:pointer"><input type="checkbox" checked="{{ remember }}" onChange="{{ toggleRemember }}" style="accent-color:#2E4234"><span style="white-space:nowrap">Remember me for 30 days</span></label>
+<p style="position:relative;margin:18px 0 0;font-size:11.5px;line-height:1.6;color:#8C8873;max-width:360px;text-wrap:balance">By entering you confirm you are 21+ and agree to our <a href="privacy.html#terms" style="color:#2E4234;text-decoration:underline">Terms</a> and <a href="privacy.html" style="color:#2E4234;text-decoration:underline">Privacy Policy</a>. Keep out of reach of children.</p>
+</div></div>
+</sc-if>
+
+<div style="background:#F8F2E7;position:relative;overflow:hidden">
+
+<!-- NAV -->
+<nav style="position:fixed;top:0;left:0;right:0;z-index:20;background:{{ navBg }};border-bottom:1px solid {{ navLine }};backdrop-filter:{{ navBlur }};-webkit-backdrop-filter:{{ navBlur }};transform:translateY({{ introNavY }});transition:background .35s ease,border-color .35s ease,transform .9s cubic-bezier(.22,.61,.36,1) .15s">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:24px;padding:0 clamp(20px,4vw,64px);height:{{ navH }};max-width:1440px;margin:0 auto">
+<div style="grid-column:1;justify-self:start;display:flex;align-items:center">
+<div style="display:{{ deskFlex }};gap:clamp(20px,3vw,44px);font-family:'Tropiline Sans',sans-serif;font-size:15px;font-weight:500;letter-spacing:.5px;white-space:nowrap">
+<a href="about.html" style="color:{{ navInk }};transition:color .35s ease">About</a><a href="our-story.html" style="color:{{ navInk }};transition:color .35s ease">Our Story</a><a href="blog.html" style="color:{{ navInk }};transition:color .35s ease">Blog</a><a href="#visit" style="color:{{ navInk }};transition:color .35s ease">Visit</a>
+</div>
+<sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ toggleMenu }}" aria-label="Open menu" style="height:44px;margin-left:-8px;padding:0 8px;border:0;background:transparent;color:{{ navInk }};cursor:pointer;display:flex;align-items:center;gap:10px;transition:color .35s ease"><span style="display:flex;flex-direction:column;gap:5px"><span style="display:block;width:22px;height:1.5px;background:currentColor"></span><span style="display:block;width:22px;height:1.5px;background:currentColor"></span><span style="display:block;width:22px;height:1.5px;background:currentColor"></span></span><span style="font-family:'DM Mono',monospace;font-weight:400;font-size:12px;letter-spacing:2.5px;text-transform:uppercase">Menu</span></button>
+</sc-if>
+</div>
+<a href="#top" aria-label="IndaKure Dispensary — back to top" style="grid-column:2;justify-self:center;display:flex;align-items:center;opacity:{{ navLogoWhiteOp }};transform:translateY({{ navLogoY }});pointer-events:{{ navLogoPE }};transition:opacity .45s ease,transform .45s cubic-bezier(.22,.61,.36,1)"><img src="./brand/logo-dispensary-cream.png" alt="IndaKure Dispensary" style="height:{{ logoH }};width:auto;display:block"></a>
+<a href="#notify" style="display:{{ deskBlock }};grid-column:3;justify-self:end;font-family:'Tropiline Sans',sans-serif;font-size:15px;font-weight:500;letter-spacing:.5px;color:{{ navInk }};border-bottom:1px solid {{ navInk }};padding-bottom:3px;white-space:nowrap;transition:color .35s ease,border-color .35s ease">Get notified →</a>
+</div>
+</nav>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<div data-no-reveal="" style="position:fixed;inset:0;z-index:40;background:#2E4234;color:#F8F2E7;display:flex;flex-direction:column;padding:0 20px 32px;box-sizing:border-box;animation:fadein .3s ease both">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;height:64px"><button onClick="{{ toggleMenu }}" aria-label="Close menu" style="justify-self:start;height:44px;margin-left:-8px;padding:0 8px;border:0;background:transparent;color:#F8F2E7;cursor:pointer;display:flex;align-items:center;gap:10px"><span style="font-size:26px;line-height:1">×</span><span style="font-family:'DM Mono',monospace;font-weight:400;font-size:12px;letter-spacing:2.5px;text-transform:uppercase">Close</span></button><a href="#top" onClick="{{ closeMenu }}" style="display:flex"><img src="./brand/logo-dispensary-cream.png" alt="IndaKure Dispensary" style="height:40px;width:auto;display:block"></a></div>
+<div style="display:flex;flex-direction:column;gap:6px;margin-top:40px">
+<a href="about.html" style="font-family:'Tropiline',Georgia,serif;font-weight:600;font-size:44px;line-height:1.25;color:#F8F2E7">About</a>
+<a href="our-story.html" style="font-family:'Tropiline',Georgia,serif;font-weight:600;font-size:44px;line-height:1.25;color:#F8F2E7">Our Story</a>
+<a href="blog.html" style="font-family:'Tropiline',Georgia,serif;font-weight:600;font-size:44px;line-height:1.25;color:#F8F2E7">Blog</a>
+<a href="#visit" onClick="{{ closeMenu }}" style="font-family:'Tropiline',Georgia,serif;font-weight:600;font-size:44px;line-height:1.25;color:#F8F2E7">Visit</a>
+</div>
+<a href="#notify" onClick="{{ closeMenu }}" style="margin-top:auto;height:52px;display:flex;align-items:center;justify-content:center;background:#D4DC72;color:#2E4234;font-family:'DM Mono',monospace;font-weight:400;font-size:13px;letter-spacing:2.5px;text-transform:uppercase">Get notified</a>
+<div style="font-family:'DM Mono',monospace;font-weight:400;margin-top:20px;font-size:11px;letter-spacing:2.5px;line-height:1.8;color:#A7B3A8;text-transform:uppercase;text-align:center">1483 Lincoln Highway · Somerset, NJ</div>
+</div>
+</sc-if>
+
+<!-- HERO -->
+<section id="top" style="position:relative;overflow:hidden;background:#faf4e5;color:#2E4234">
+<div ref="{{ heroLogoRef }}" style="position:absolute;inset:0;pointer-events:none"></div>
+
+<div style="position:relative;z-index:1;box-sizing:border-box;padding:clamp(128px,13vw,184px) clamp(20px,4vw,64px) 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(22px,2.2vw,30px)">
+<h1 style="margin:0;font-family:'Tropiline',Georgia,serif;font-weight:600;font-size:clamp(30px,4vw,64px);line-height:1.06;color:#2E4234;text-wrap:balance;max-width:860px"><span style="display:block;opacity:{{ introOp }};transform:translateY({{ introY }});transition:opacity 1s ease .55s,transform 1s cubic-bezier(.22,.61,.36,1) .55s">A different kind of <em style="font-style:italic">flower</em> shop</span><span style="display:block;color:#5C5A24;opacity:{{ introOp }};transform:translateY({{ introY }});transition:opacity 1s ease .8s,transform 1s cubic-bezier(.22,.61,.36,1) .8s">Coming 2027</span></h1>
+<div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;opacity:{{ introOp }};transform:translateY({{ introY }});transition:opacity 1s ease 1.05s,transform 1s cubic-bezier(.22,.61,.36,1) 1.05s">
+<a href="#notify" style="height:52px;padding:0 26px;display:inline-flex;align-items:center;background:#2E4234;color:#F8F2E7;font-family:'DM Mono',monospace;font-weight:400;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;white-space:nowrap" style-hover="background:#D4DC72;color:#2E4234">Get notified</a>
+<a href="our-story.html" style="height:52px;padding:0 24px;box-sizing:border-box;display:inline-flex;align-items:center;border:1px solid #2E4234;color:#2E4234;font-family:'DM Mono',monospace;font-weight:400;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;white-space:nowrap" style-hover="background:#2E4234;color:#F8F2E7">Meet the sisters →</a>
+</div>
+</div>
+<div style="position:relative;z-index:0;width:100%;margin-top:{{ heroImgMt }};opacity:{{ introOp }};transform:scale({{ introBgScale }});transform-origin:50% 100%;transition:opacity 1.4s ease .2s,transform 2.4s cubic-bezier(.22,.61,.36,1)">
+<div style="position:absolute;left:0;right:0;bottom:-1px;height:12%;background:linear-gradient(180deg,rgba(250,244,229,0) 0%,#faf4e5 100%);pointer-events:none;z-index:1"></div>
+<picture><source media="(max-width: 759px)" srcset="./assets/hero-storefront-mobile.jpg"><img src="./assets/hero-storefront.jpg" alt="Illustration of the IndaKure storefront at 1483 Lincoln Highway, its windows full of plants" style="display:block;width:100%;height:auto"></picture>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="position:relative;overflow:hidden;background:#f9f2e1;color:#2E4234">
+<div style="max-width:1440px;margin:0 auto;padding:clamp(61px,7.65vw,95px) clamp(20px,4vw,64px) clamp(72px,8vw,104px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(32px,6vw,96px)">
+<div>
+<div style="font-family:'DM Mono',monospace;font-weight:400;font-size:13px;letter-spacing:2.5px;color:#2E4234;text-transform:uppercase">About</div>
+<h2 style="margin:24px 0 0;font-family:'Tropiline',Georgia,serif;font-weight:600;font-size:clamp(44px,5vw,80px);line-height:1.045;letter-spacing:0;text-wrap:balance">Your friendly neighborhood <em style="font-style:italic">flower</em> dispensary</h2>
+</div>
+<div>
+<p style="margin:0;font-size:clamp(22px,2.2vw,28px);line-height:1.35;text-wrap:pretty">IndaKure is an adult-use cannabis dispensary and garden, with genuine botanical knowledge, warm hospitality and a knowing sense of humor. Built by two sisters who really love plants.</p>
+<p style="margin:24px 0 0;font-size:20px;line-height:30px;color:#5A574E;max-width:600px">Tended with care. Open to all: the curious first-timer, the veteran, the neighbor, the regular.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px 32px;margin-top:clamp(40px,5vw,56px);padding-top:32px;border-top:1px solid #D9D2C3">
+<div><div style="font-family:'DM Mono',monospace;font-weight:400;font-size:12px;letter-spacing:2.5px;color:#2E4234;text-transform:uppercase">Hand-picked</div><p style="margin:14px 0 0;font-size:17px;line-height:26px">Thoughtfully chosen adult-use flower from growers we trust, and honest guidance about where it came from.</p></div>
+<div><div style="font-family:'DM Mono',monospace;font-weight:400;font-size:12px;letter-spacing:2.5px;color:#2E4234;text-transform:uppercase">Let's talk flower</div><p style="margin:14px 0 0;font-size:17px;line-height:26px">Clear answers on flower, formats and terms. We teach before we sell.</p></div>
+<div><div style="font-family:'DM Mono',monospace;font-weight:400;font-size:12px;letter-spacing:2.5px;color:#2E4234;text-transform:uppercase">Bloom together</div><p style="margin:14px 0 0;font-size:17px;line-height:26px">A space for gatherings and classes, and objects worth keeping.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- STORY -->
+<section id="story" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));min-height:680px">
+<div style="position:relative;min-height:clamp(420px,110vw,520px);background:#8A9161"><div style="position:absolute;inset:0"><image-slot id="sisters" src="assets/photos/sisters.jpg" shape="rect" placeholder="Amina & Mariam — editorial portrait (drop image)"></image-slot></div><div style="position:absolute;left:32px;bottom:28px;right:32px;pointer-events:none;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><span style="font-family:'DM Mono',monospace;font-weight:400;font-size:13px;letter-spacing:2.5px;color:#F8F2E7;text-transform:uppercase;text-shadow:0 1px 12px rgba(0,0,0,.6)">Amina &amp; Mariam Kure</span></div></div>
+<div style="padding:clamp(64px,8vw,88px) clamp(20px,5vw,80px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background:#5C5A24;color:#F8F2E7">
+<div style="position:relative">
+<div style="font-family:'DM Mono',monospace;font-weight:400;font-size:14px;letter-spacing:2.5px;color:#D4DC72;text-transform:uppercase">Our story</div>
+<h2 style="margin:24px 0 0;font-family:'Tropiline',Georgia,serif;font-weight:600;font-size:clamp(48px,5.4vw,88px);line-height:1.045;letter-spacing:0;text-wrap:balance">Two green thumbs</h2>
+<p style="margin:clamp(24px,3vw,32px) 0 0;font-size:clamp(18px,1.6vw,20px);line-height:1.5;max-width:520px;text-wrap:pretty;color:#F8F2E7">We've always been plant people. The kind who get excited about new leaves, spend a little too long in the garden, and believe there's something special about watching things grow.</p>
+<p style="margin:18px 0 0;font-size:clamp(18px,1.6vw,20px);line-height:1.5;max-width:520px;text-wrap:pretty">Inda comes from indica. Kure is our family name. <span style="font-weight:500">Good flower, good people, and a whole lot of heart.</span></p>
+<a href="our-story.html" style="display:inline-block;font-family:'DM Mono',monospace;font-weight:400;margin-top:40px;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;border-bottom:1px solid #F8F2E7;padding-bottom:4px;width:fit-content;color:#F8F2E7">Meet the sisters →</a>
+</div>
+</div>
+</section>
+
+<!-- JOURNAL -->
+<section id="journal" style="background:#EFE7D6">
+<div style="padding:clamp(72px,9vw,104px) clamp(20px,4vw,64px) clamp(72px,9vw,112px);max-width:1440px;margin:0 auto">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+<div><div style="font-family:'DM Mono',monospace;font-weight:400;font-size:14px;letter-spacing:2.5px;color:#8C8873;text-transform:uppercase">Garden Notes</div><h2 style="margin:24px 0 0;font-family:'Tropiline',Georgia,serif;font-weight:600;font-size:clamp(48px,5.4vw,88px);line-height:1.045;letter-spacing:0">Here's what we've been tending</h2></div>
+<a href="blog.html" style="font-family:'DM Mono',monospace;font-weight:400;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;border-bottom:1px solid #2E4234;padding-bottom:4px">All notes →</a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(24px,3vw,32px);margin-top:clamp(40px,5vw,64px)">
+<a href="blog-post.html?post=road" style="display:flex;flex-direction:column;background:#F8F2E7;color:#2E4234">
+<div style="position:relative;aspect-ratio:16/10;background:#C8923A"><image-slot id="journal-hero" src="assets/photos/journal-hero.jpg" shape="rect" placeholder="Latest build photo (drop image)"></image-slot></div>
+<div style="padding:clamp(20px,3vw,28px) clamp(20px,3vw,32px) clamp(26px,3vw,34px)"><div style="font-family:'DM Mono',monospace;font-weight:400;display:flex;gap:12px;align-items:center;font-size:12px;letter-spacing:2.5px;color:#8C8873"><span style="background:#C8923A;color:#2E4234;padding:4px 8px">BUILD</span>LATEST</div><div style="font-size:clamp(28px,2.6vw,40px);line-height:1.1;letter-spacing:0;margin-top:14px;font-family:'Tropiline',Georgia,serif;font-weight:600;text-wrap:balance">The road to opening IndaKure</div><p style="margin:14px 0 0;font-size:17px;line-height:26px;max-width:520px">Opening a dispensary has been a journey of persistence, hard work, and belief in our mission. Here’s how far we’ve come—and what’s ahead.</p></div>
+</a>
+<div style="display:flex;flex-direction:column;gap:0">
+<sc-for list="{{ posts }}" as="p" hint-placeholder-count="1">
+<a href="{{ p.href }}" style="display:grid;grid-template-columns:clamp(88px,22vw,128px) minmax(0,1fr);gap:clamp(16px,2vw,22px);align-items:center;padding:20px 0;border-bottom:1px solid #D9D2C3">
+<div style="aspect-ratio:1/1;position:relative;background:{{ p.color }}"><image-slot id="{{ p.slot }}" src="{{ p.src }}" shape="rect" placeholder="photo"></image-slot></div>
+<div><div style="font-family:'DM Mono',monospace;font-weight:400;display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:12px;letter-spacing:2.5px;color:#8C8873"><span style="background:{{ p.color }};color:{{ p.ink }};padding:4px 8px">{{ p.cat }}</span>{{ p.date }}</div><div style="font-size:clamp(20px,2vw,24px);line-height:1.2;letter-spacing:0;margin-top:10px;font-family:'Tropiline',Georgia,serif;font-weight:600">{{ p.title }}</div></div>
+</a>
+</sc-for>
+<div style="margin-top:28px;font-size:17px;line-height:26px;color:#2E4234">New notes every other week, <span style="font-weight:500">written by us.</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- VISIT + NOTIFY -->
+<section id="visit" style="background:linear-gradient(rgba(46,66,52,.35),rgba(46,66,52,.35)),#8A9161 url('./assets/storefront-before.jpg') center 45%/cover no-repeat;padding:clamp(88px,11vw,160px) clamp(20px,4vw,64px)">
+<div id="notify" style="max-width:600px;aspect-ratio:1/1;margin:0 auto;box-sizing:border-box;padding:clamp(40px,6vw,72px) clamp(24px,5vw,64px);background:#5C5A24;color:#D4DC72;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 24px 60px -32px rgba(46,66,52,.45)">
+<div style="font-family:'DM Mono',monospace;font-weight:400;font-size:12px;letter-spacing:2.5px;color:#F8F2E7;text-transform:uppercase">Opening February 2027</div>
+<h2 style="margin:20px 0 0;font-family:'Tropiline',Georgia,serif;font-weight:600;font-size:clamp(40px,5.2vw,64px);line-height:1.04;letter-spacing:0;color:#D4DC72;text-wrap:balance">Stay in the loop as we grow</h2>
+<sc-if value="{{ subscribed }}" hint-placeholder-val="{{ false }}">
+<div style="margin-top:32px;font-family:'Tropiline',Georgia,serif;font-weight:600;font-size:24px;line-height:1.3;color:#F8F2E7">You're on the list. Good days start here</div>
+</sc-if>
+<sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;width:100%;max-width:420px;margin-top:clamp(28px,3vw,36px)">
+<input type="text" inputmode="email" placeholder="Email or mobile number" value="{{ email }}" onChange="{{ setEmail }}" onKeyDown="{{ onKey }}" aria-label="Email or mobile number" autocomplete="email" style="flex:1;min-width:0;height:52px;padding:0 16px;border:1px solid #D4DC72;border-right:0;background:transparent;color:#F8F2E7;font-family:'Tropiline Sans',sans-serif;font-size:16px;outline:none">
+<button onClick="{{ subscribe }}" style="font-family:'DM Mono',monospace;font-weight:400;height:52px;padding:0 20px;border:0;background:#D4DC72;color:#2E4234;font-size:12px;letter-spacing:2.5px;cursor:pointer;white-space:nowrap;text-transform:uppercase" style-hover="background:#F8F2E7;color:#2E4234">{{ submitLabel }}</button>
+</div>
+<p style="margin:14px 0 0;font-size:12px;line-height:18px;color:#F8F2E7;max-width:400px;text-wrap:pretty">Updates on the space, straight to you. 21+ only. Reply STOP to unsubscribe.</p><sc-if value="{{ signupError }}" hint-placeholder-val="{{ false }}"><p role="alert" style="margin:12px 0 0;font-size:14px;line-height:20px;color:#F8F2E7">{{ signupError }}</p></sc-if>
+</sc-if>
+<div style="font-family:'DM Mono',monospace;font-weight:400;margin-top:clamp(28px,3vw,36px);font-size:11px;letter-spacing:2px;line-height:1.8;color:#F8F2E7;text-transform:uppercase;text-wrap:balance">1483 Lincoln Highway · <span style="white-space:nowrap">Somerset, NJ</span></div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="position:relative;overflow:hidden;background:#2E4234;color:#F8F2E7;border-top:1px solid #3F5A48">
+<div style="max-width:1440px;margin:0 auto;padding:40px clamp(20px,4vw,64px)">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+<span style="font-family:'Tropiline',Georgia,serif;font-weight:600;font-size:22px;letter-spacing:0;color:#D4DC72">Good days start here.</span>
+<div style="display:flex;gap:10px">
+<a href="https://instagram.com/indakure" aria-label="Instagram" style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid #3F5A48;color:#F8F2E7" style-hover="background:#F8F2E7;color:#2E4234"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+<a href="https://facebook.com/indakurenj" aria-label="Facebook" style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid #3F5A48;color:#F8F2E7" style-hover="background:#F8F2E7;color:#2E4234"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8a0 0 0 0 1 0 0z"/></svg></a>
+<a href="mailto:indakure@gmail.com" aria-label="Email" style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid #3F5A48;color:#F8F2E7" style-hover="background:#F8F2E7;color:#2E4234"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg></a>
+</div>
+</div>
+<div style="font-family:'DM Mono',monospace;font-weight:400;display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px solid #3F5A48;font-size:11px;letter-spacing:2.5px;line-height:1.8;color:#A7B3A8;text-transform:uppercase">
+<span>© 2026 IndaKure — Cannabis dispensary &amp; garden · NJ CRC Lic. # RE000166</span>
+<span>21+ only · Keep out of reach of children</span>
+<a href="privacy.html" style="color:#A7B3A8">Privacy &amp; Terms</a>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showAgeGate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Age gate&quot;},&quot;alwaysShowGate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Age gate&quot;}}">
+const SUBMIT_LABEL = 'Notify me';
+class Component extends DCLogic {
+  doSignup = () => {
+    if (this.state.sending) return;
+    const v = (this.state.email || '').trim();
+    if (!window.IndaKureSignup.valid(v)) { this.setState({ signupError: 'Please enter a valid email address or mobile number.' }); return; }
+    this.setState({ sending: true, signupError: '' });
+    window.IndaKureSignup.send(v, 'home-notify')
+      .then(() => this.setState({ sending: false, subscribed: true }))
+      .catch(() => this.setState({ sending: false, signupError: 'Something went wrong. Please try again in a moment.' }));
+  };
+  state = { gateOpen: true, remember: true, email: '', subscribed: false, scrolled: false };
+  heroLogoRef = React.createRef();
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll, true); window.removeEventListener('resize', this.onScroll); }
+  onScroll = () => {
+    const m = window.innerWidth < 760;
+    if (m !== this.state.mobile) this.setState({ mobile: m, menuOpen: m && this.state.menuOpen });
+    const el = this.heroLogoRef.current; if (!el) return;
+    const past = el.parentElement.getBoundingClientRect().bottom < 80;
+    if (past !== this.state.scrolled) this.setState({ scrolled: past });
+  };
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll, true); window.addEventListener('resize', this.onScroll); this.onScroll();
+    try { const t = +localStorage.getItem('indakure-age-ok-until'); if (!(this.props.alwaysShowGate ?? false) && t > Date.now()) this.setState({ gateOpen: false }); } catch (e) {}
+    if (!(this.props.showAgeGate ?? true) || !this.state.gateOpen) setTimeout(() => this.setState({ intro: true }), 120);
+  }
+  renderVals() {
+    const gateOpen = (this.props.showAgeGate ?? true) && this.state.gateOpen;
+    const sc = this.state.scrolled;
+    return {
+      gateOpen,
+      introNavY: this.state.intro ? '0' : '-100%',
+      introOp: this.state.intro ? 1 : 0,
+      introY: this.state.intro ? '0' : '18px',
+      introBgScale: this.state.intro ? 1 : 1.06,
+      heroLogoRef: this.heroLogoRef,
+      mobile: !!this.state.mobile,
+      menuOpen: !!this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      navH: this.state.mobile ? '64px' : '76px',
+      logoH: this.state.mobile ? '40px' : '54px',
+      deskFlex: this.state.mobile ? 'none' : 'flex',
+      deskBlock: this.state.mobile ? 'none' : 'block',
+      heroImgMt: this.state.mobile ? 'min(0px, calc(56px - 94.6vw))' : 'min(0px, calc(56px - 19.7vw))',
+      navBg: sc ? 'rgba(46,66,52,.97)' : 'rgba(46,66,52,0)',
+      navLine: 'transparent',
+      navInk: sc ? '#F8F2E7' : '#2E4234',
+      navBlur: sc ? 'blur(8px)' : 'none',
+      navLogoOpacity: 1,
+      navLogoDarkOp: sc ? 0 : 1,
+      navLogoWhiteOp: sc ? 1 : 0,
+      navLogoSrc: sc ? './brand/logo-forest.png' : './brand/logo-cotton.png',
+      navLogoY: sc ? '0' : '6px',
+      navLogoPE: sc ? 'auto' : 'none',
+      enter: () => { try { if (this.state.remember) localStorage.setItem('indakure-age-ok-until', String(Date.now() + 30 * 864e5)); } catch (e) {} this.setState({ gateOpen: false }); setTimeout(() => this.setState({ intro: true }), 60); },
+      remember: this.state.remember,
+      toggleRemember: () => this.setState(s => ({ remember: !s.remember })),
+      email: this.state.email,
+      setEmail: e => this.setState({ email: e.target.value }),
+      subscribed: this.state.subscribed,
+      notSubscribed: !this.state.subscribed,
+      subscribe: () => this.doSignup(),
+      onKey: e => { if (e.key === 'Enter') this.doSignup(); },
+      signupError: this.state.signupError || '', sending: !!this.state.sending,
+      submitLabel: this.state.sending ? 'Sending…' : SUBMIT_LABEL,
+      guides: [
+        { slot: 'g1', img: 'Pressed flower on linen', kicker: 'Cannabis 101', time: '5 min', title: 'Flower, edibles, vapes: what\u2019s what', blurb: 'The forms cannabis comes in and how they differ. Described plainly, no jargon.' },
+        { slot: 'g2', img: 'Hands, ID card, counter', kicker: 'First visit', time: '4 min', title: 'What to bring and what to expect', blurb: 'Valid ID, cash or debit, and ten minutes. Here\u2019s how a visit to IndaKure goes.' },
+        { slot: 'g3', img: 'Botanical on stone, NJ map detail', kicker: 'NJ rules', time: '3 min', title: 'Purchase limits and where you can use', blurb: 'New Jersey\u2019s adult-use rules in plain English, from two people who read the fine print.' }
+      ],
+      posts: [
+        { slot: 'post-journey', src: 'assets/story-twins-army.jpg', cat: 'STORY', date: '3 MIN READ', color: '#5C5A24', ink: '#D4DC72', href: 'blog-post.html?post=journey', title: 'Our journey to IndaKure' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

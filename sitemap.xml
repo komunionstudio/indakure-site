@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://indakure.com/</loc></url>
-  <url><loc>https://indakure.com/about.html</loc></url>
-  <url><loc>https://indakure.com/our-story.html</loc></url>
-  <url><loc>https://indakure.com/blog.html</loc></url>
-  <url><loc>https://indakure.com/blog-post.html?post=road</loc></url>
-  <url><loc>https://indakure.com/blog-post.html?post=journey</loc></url>
-  <url><loc>https://indakure.com/privacy.html</loc></url>
+  <url><loc>https://indakure.com/about</loc></url>
+  <url><loc>https://indakure.com/our-story</loc></url>
+  <url><loc>https://indakure.com/blog</loc></url>
+  <url><loc>https://indakure.com/blog-post?post=road</loc></url>
+  <url><loc>https://indakure.com/blog-post?post=journey</loc></url>
+  <url><loc>https://indakure.com/privacy</loc></url>
 </urlset>

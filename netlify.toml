@@ -1,0 +1,60 @@
+# Netlify settings for indakure.com
+# The website is the "site" folder; nothing needs building.
+[build]
+  publish = "site"
+  command = ""
+
+# Don't let Netlify rewrite our HTML (its link rewriter breaks inline styles).
+[build.processing]
+  skip_processing = true
+[build.processing.html]
+  pretty_urls = false
+
+# Clean addresses -> page files
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+[[redirects]]
+  from = "/our-story"
+  to = "/our-story.html"
+  status = 200
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+[[redirects]]
+  from = "/blog-post"
+  to = "/blog-post.html"
+  status = 200
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+[[redirects]]
+  from = "/story"
+  to = "/our-story"
+  status = 301
+[[redirects]]
+  from = "/notes"
+  to = "/blog"
+  status = 301
+
+# Long cache for images and fonts, always-fresh pages and scripts
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"

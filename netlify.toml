@@ -1,7 +1,7 @@
 # Netlify settings for indakure.com
 # The website is the "site" folder; nothing needs building.
 [build]
-  publish = "site"
+  publish = "."
   command = ""
 
 # Don't let Netlify rewrite our HTML (its link rewriter breaks inline styles).
